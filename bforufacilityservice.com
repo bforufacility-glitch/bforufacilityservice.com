@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureGuard Agency | Professional Security Services</title>
+    <title>B FOR U Facility Services | Professional Security Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -107,7 +107,7 @@
         header {
             background-color: var(--primary);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -121,14 +121,29 @@
             align-items: center;
         }
         
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
         }
         
-        .logo span {
+        .logo-main {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        
+        .logo-sub {
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: -5px;
             color: var(--accent);
         }
         
@@ -279,12 +294,12 @@
             margin-bottom: 20px;
         }
         
-        /* Service Request Form */
-        .request-service {
+        /* Job Application Section */
+        .job-application {
             background-color: white;
         }
         
-        .form-container {
+        .application-container {
             max-width: 800px;
             margin: 0 auto;
             background-color: var(--light);
@@ -328,9 +343,23 @@
             gap: 20px;
         }
         
+        /* Service Request Form */
+        .request-service {
+            background-color: var(--light);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
         /* Contact Section */
         .contact {
-            background-color: var(--light);
+            background-color: white;
         }
         
         .contact-container {
@@ -359,6 +388,11 @@
         
         .contact-item h3 {
             margin-bottom: 5px;
+        }
+        
+        .contact-item a {
+            color: var(--secondary);
+            text-decoration: none;
         }
         
         /* Footer */
@@ -440,6 +474,22 @@
         @media (max-width: 768px) {
             nav ul {
                 display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
             }
             
             .mobile-menu {
@@ -474,8 +524,16 @@
                 font-size: 2rem;
             }
             
-            .form-container {
+            .form-container, .application-container {
                 padding: 25px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -484,17 +542,23 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Secure<span>Guard</span></a>
+            <div class="logo-container">
+                <a href="#" class="logo-text">
+                    <span class="logo-main">B FOR U</span>
+                    <span class="logo-sub">FACILITY SERVICES</span>
+                </a>
+            </div>
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#hiring">Join Our Team</a></li>
+                    <li><a href="#job-application">Apply for Job</a></li>
                     <li><a href="#request-service">Request Service</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu">
+            <div class="mobile-menu" id="mobileMenu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -504,9 +568,9 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Professional Security Solutions</h1>
-            <p>SecureGuard Agency provides top-tier security personnel and services for malls, buildings, offices, industries, and private clients. Your safety is our priority.</p>
+            <p>B FOR U Facility Services provides top-tier security personnel and services for malls, buildings, offices, industries, and private clients. Your safety is our priority.</p>
             <div class="hero-btns">
-                <a href="#hiring" class="btn">Join Our Team</a>
+                <a href="#job-application" class="btn">Apply for Security Job</a>
                 <a href="#request-service" class="btn btn-outline">Request Our Services</a>
             </div>
         </div>
@@ -585,13 +649,13 @@
                     <i class="fas fa-phone-alt"></i>
                     <h3>Call Us Directly</h3>
                     <p>Speak with our recruitment team to discuss available positions and schedule an interview.</p>
-                    <a href="tel:+1234567890" class="btn">Call Now</a>
+                    <a href="tel:+918655803200" class="btn">Call: +91 8655803200</a>
                 </div>
                 <div class="hiring-option">
                     <i class="fas fa-user-plus"></i>
                     <h3>Online Registration</h3>
                     <p>Fill out our online application form with your details and experience.</p>
-                    <a href="#contact" class="btn">Apply Online</a>
+                    <a href="#job-application" class="btn">Apply Online</a>
                 </div>
                 <div class="hiring-option">
                     <i class="fas fa-file-alt"></i>
@@ -599,6 +663,70 @@
                     <p>Come to our office with your documents and resume for a face-to-face discussion.</p>
                     <a href="#contact" class="btn">Get Directions</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Application Section -->
+    <section class="job-application" id="job-application">
+        <div class="container">
+            <h2>Apply for Security Position</h2>
+            <div class="application-container">
+                <form id="jobApplicationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-phone">Phone Number</label>
+                            <input type="tel" id="app-phone" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-email">Email Address</label>
+                        <input type="email" id="app-email" class="form-control" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="position">Position Applying For</label>
+                            <select id="position" class="form-control" required>
+                                <option value="">Select a position</option>
+                                <option value="security-guard">Security Guard</option>
+                                <option value="bodyguard">Bodyguard</option>
+                                <option value="housekeeper">Housekeeper</option>
+                                <option value="office-clerk">Office Clerk</option>
+                                <option value="industry-worker">Industry Worker</option>
+                                <option value="event-security">Event Security</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" class="form-control" required>
+                                <option value="">Select experience</option>
+                                <option value="0-1">0-1 years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualifications">Qualifications & Skills</label>
+                        <textarea id="qualifications" class="form-control" placeholder="List your relevant qualifications, training, certifications, and skills..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability" class="form-control" required>
+                            <option value="">Select availability</option>
+                            <option value="immediate">Immediate</option>
+                            <option value="1-week">Within 1 week</option>
+                            <option value="2-weeks">Within 2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
+                </form>
             </div>
         </div>
     </section>
@@ -678,23 +806,22 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Our Office</h3>
-                            <p>123 Security Avenue, Safety City, SC 12345</p>
+                            <p>Shop No-10, Seven Square Academy (School), Deepak Hospital Road, Near Family Care Hospital, Mira Road (East), Thane – 401107</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+1 (234) 567-8900 (General Inquiries)</p>
-                            <p>+1 (234) 567-8901 (Recruitment)</p>
+                            <p><a href="tel:+918655803200">+91 8655803200</a> (General Inquiries)</p>
+                            <p><a href="tel:+919021245483">+91 9021245483</a> (Recruitment)</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email Us</h3>
-                            <p>info@secureguard.com</p>
-                            <p>careers@secureguard.com</p>
+                            <p><a href="mailto:bforufacility@gmail.com">bforufacility@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -710,7 +837,7 @@
                 <div class="map-container">
                     <!-- In a real implementation, you would embed a Google Map here -->
                     <div style="background-color: #e9ecef; height: 100%; min-height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                        <p>Map would be embedded here</p>
+                        <p>Map would be embedded here showing:<br>Shop No-10, Seven Square Academy,<br>Deepak Hospital Road, Mira Road (East), Thane</p>
                     </div>
                 </div>
             </div>
@@ -722,8 +849,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>SecureGuard Agency</h3>
-                    <p>Providing professional security solutions since 2005. Your safety and peace of mind are our top priorities.</p>
+                    <h3>B FOR U Facility Services</h3>
+                    <p>Providing professional security solutions. Your safety and peace of mind are our top priorities.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
@@ -731,6 +858,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#hiring">Careers</a></li>
+                        <li><a href="#job-application">Apply for Job</a></li>
                         <li><a href="#request-service">Request Service</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -756,22 +884,27 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 SecureGuard Agency. All rights reserved.</p>
+                <p>&copy; 2023 B FOR U Facility Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').style.display = 
-                document.querySelector('nav ul').style.display === 'flex' ? 'none' : 'flex';
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('show');
         });
 
-        // Form submission
+        // Form submissions
         document.getElementById('serviceRequestForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your service request! We will contact you shortly.');
+            this.reset();
+        });
+
+        document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your job application! We will review your details and contact you soon.');
             this.reset();
         });
 
@@ -792,7 +925,7 @@
                     
                     // Close mobile menu if open
                     if(window.innerWidth <= 768) {
-                        document.querySelector('nav ul').style.display = 'none';
+                        document.getElementById('navMenu').classList.remove('show');
                     }
                 }
             });
